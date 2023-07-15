@@ -1,0 +1,64 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+{% block page_title %}
+	Tableau de bord administrateur | Synexta
+{% endblock %}
+
+{% block content %}
+	<div>
+		<div class="row col-sm-8 mt-3 mb-5">
+			<div class="col-xl-3 col-lg-6">
+				<div class="card text-white bg-success">
+					<div class="card-header">
+						<div class="row">
+							<div class="col col-xs-3">
+								<i class="fa fa-user fa-4x"></i>
+							</div>
+							<div class="col col-xs-9 text-right">
+								<div class="d-block">
+									<h6>Utilisateurs</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer">
+						<span class="float-left">{{ users }}
+							Utilisateur(s)</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-3 col-lg-6">
+				<div class="card text-white bg-info ">
+					<div class="card-header">
+						<div class="row">
+							<div class="col col-xs-3">
+								<i class="fa fa-id-card fa-4x"></i>
+							</div>
+							<div class="col col-xs-9 text-right">
+								<div class="d-block">
+									<h6>Applications</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer">
+						<span class="float-left">{{ applications }}
+							Application(s)</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3>Journaux des applications</h3>
+			<ul class="list-group">
+				{% for entry in applications_logs %}
+					<li class="list-group-item">
+						{{ entry.lastName }}
+						{{ entry.firstName }}
+						a ajouté une nouvelle application le
+						{{ entry.createdAt|date('d/m/Y H:i:s') }}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endblock %}

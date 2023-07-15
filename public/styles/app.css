@@ -1,0 +1,25 @@
+body {
+    font-family: Play, sans-serif, cursive;
+  }
+  
+  .form-floating>.form-control-plaintext~label::after,
+  .form-floating>.form-control:focus~label::after,
+  .form-floating>.form-control:not(:placeholder-shown)~label::after,
+  .form-floating>.form-select~label::after {
+    background-color: transparent !important;
+  }
+  
+  .main-content { 
+    min-height: 91vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .feature {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+  }
